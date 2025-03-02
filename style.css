@@ -1,0 +1,514 @@
+/* Website font */
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
+
+/* Universal Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+/* Define font sizes and line-height for headings */
+h1 {
+    font-size: 3.9rem;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 1.5rem;
+    line-height: 1.3;
+}
+
+h3 {
+    font-size: 1.4rem;
+    line-height: 1.4;
+}
+
+h4 {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+h5 {
+    font-size: 0.875rem;
+    line-height: 1.6;
+}
+
+h6 {
+    font-size: 0.75rem;
+    line-height: 1.7;
+}
+
+/* Body styling */
+body {
+    /* Gradient Background */
+    background-image: linear-gradient(to right, #e6d5ff, #e6d5ff, #ebdfff, #f0e8ff, #f6f2ff, #faf8ff, #faf9ff, #f3f2ff, #e9e9ff, #dee0ff, #d6dcff, #c8d4ff);
+    /* Font */
+    color: #27272a;
+    font-family: "Sora", sans-serif;
+    text-align: center;
+    /* Set minimum height to 100% of the viewport height */
+    min-height: 100vh; 
+    display: block;
+    overflow-x: hidden;
+}
+
+/* Styling header */
+header {
+    width: 100%; /* Make header span full width */
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+    padding: 50px; /* Add padding */
+    margin-bottom: 50px;
+}
+
+/* Styling for the header title */
+.header-title {
+    margin-bottom: 40px; /* Add spacing below title */
+}
+
+/* Styling for the navigation links */
+nav ul {
+    display: flex;
+    gap: 1rem;
+    justify-content: center; /* Center navigation links horizontally */
+    list-style: none;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+nav li a {
+    display: inline-block; /* Display links in a row */
+    margin: 0 15px; /* Add margin for spacing between links */
+    text-decoration: none; /* Remove default underline decoration */
+    color: #333; /* Set color for navigation links */
+    padding: 10px; /* Add padding for spacing */
+}
+
+nav a.active {
+    border-bottom: 0.5px solid #3333337c;
+    color: #333;
+}
+
+nav a:hover {
+    padding-bottom: 10px;
+    border-bottom: solid 1px #3333337c;
+}
+
+/* Styling for paragraphs */
+p {
+    color: #52525b;
+    text-align: left;
+    width: 90%;
+    font-size: 16px;
+    line-height: 2;
+}
+
+#main-outlet {
+    background: rgb(243, 242, 255);
+    background: linear-gradient(0deg, rgba(243, 242, 255, 1) 33%, rgba(255, 255, 255, 0) 100%);
+    max-height: 100%;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* styling for work page cuz it didnt work */
+#main-outlet-work {
+    background: rgb(243, 242, 255);
+    background: linear-gradient(0deg, rgba(243, 242, 255, 1) 33%, rgba(255, 255, 255, 0) 100%);
+    max-height: 100%;
+    width: 100%; /* Take up full width */
+}
+
+/* home page styling */
+.home-section {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    gap: 6rem; /* Space between the image and text */
+    max-width: 80%; /* Limit the width for better responsiveness */
+    margin: 0 auto; /* Center the section on the page */
+}
+
+/* Image Styling */
+.home-section img {
+    width: 200px; /* Adjust the size of the image */
+    height: auto;
+    flex-shrink: 0; /* Prevent the image from shrinking on smaller screens */
+    opacity: 90%;
+}
+
+/* Text Content Styling */
+.text-content {
+    display: flex;
+    flex-direction: column; /* Stack text and buttons vertically */
+    gap: 1rem; /* Space between elements */
+    text-align: left; /* Align text to the left */
+}
+
+.text-content h2 {
+    font-size: 2.5rem;
+    margin: 0;
+    color: #333;
+}
+
+.text-content p {
+    font-size: 1.25rem;
+    margin: 0;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* call to action buttons */
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.cta-button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 4px;
+    background-color: #ffffff;
+    color: #333;
+    border: solid 0.5px #e9e9e9;
+}
+
+/* Styling for the project cards container */
+.work {
+    background: none; /* Remove background color and gradient */
+    width: 100%;
+    padding: 20px; /* Add padding for spacing */
+    box-sizing: border-box; /* Include padding in the width calculation */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+}
+
+/* Styling for project cards */
+.project-card {
+    display: flex;
+    flex-direction: row;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 50px;
+    width: 90%;
+    max-width: 850px;
+}
+
+.project-card img {
+    max-width: 90%;
+    height: auto;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.project-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50%; /* Ensure it takes up the remaining space */
+}
+
+.project-card h3 {
+    font-size: 1.2rem;
+    margin: 0 0 10px 0;
+}
+
+.project-card p {
+    color: #666;
+    font-size: 1rem;
+    margin: 0 0 20px 0;
+}
+
+.navigation-button,
+.github-link {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.icon-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.icon-link:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.1);
+}
+
+.icon-link svg {
+    width: 20px;
+    height: 20px;
+    color: #333; /* Default icon color */
+}
+
+.icon-link.github-icon svg {
+    color: #333; /* GitHub's dark gray */
+}
+
+.icon-link.website-icon svg {
+    color: #333; /* Blue for the website icon */
+}
+
+/* about me */
+
+.about-content {
+    font-size: 16px;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: justify;
+    padding: 40px; /* Increase padding for more spacing */
+    margin: auto; /* Center the div horizontally */
+    max-width: 80%; /* Limit the width of the content */
+}
+
+.about-title {
+    font-size: 2rem; /* Adjust font size */
+    color: #333; /* Set text color */
+    margin: 20px; /* Add spacing below the title */
+}
+
+.aboutme-list {
+    width: 75%;
+    text-align: left;
+    margin: 20px 0; /* Increase margin for more spacing */
+    padding: 10px;
+}
+
+.aboutme-list li {
+    margin-bottom: 10px; /* Add spacing between list items */
+}
+
+/* Additional styling for h2 */
+.about-content h2 {
+    margin-bottom: 20px; /* Add spacing below h2 */
+}
+
+/* contact me page */
+
+.contactme {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    margin: auto;
+    max-width: 70%; /* Limit maximum width of the grid container */
+    gap: 20px; /* Space between elements */
+    padding: 40px; /* Increase padding for more spacing */
+}
+
+.contactme a {
+    color: #333;
+    font-weight: bold;
+}
+
+.contactme h2 {
+    font-size: 2rem; /* Adjust font size */
+    color: #333; /* Set text color */
+    margin: 10px; /* Add spacing below the title */
+}
+
+.error-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: auto; /* Center the div horizontally */
+    max-width: 30%; /* Limit the width of the content */
+}
+
+/* footer settings */
+footer {
+    background-color: #ffffff;
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+    display: flex;
+    justify-content:space-around;
+    align-items:center;
+}
+
+footer p {
+    font-size: 16px;
+    color: #333;
+    margin: 0;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.social-icons li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    text-decoration: none;
+}
+
+.social-icons svg {
+    width: 20px;
+    height: auto;
+    color: #333;
+}
+
+
+
+/* Responsive Design Adjustments */
+
+@media only screen and (max-width: 768px) {
+    /* Styles for screens smaller than 768px */
+    header {
+        padding: calc(20px + (40px - 20px) * ((viewport-width - 576px) / (768px - 576px))); /* Smooth padding transition */
+    }
+
+    /* Styling for the header title */
+    .header-title {
+        margin-bottom: 40px; /* Add spacing below title */
+    }
+
+    /* Styling for the navigation links */
+    nav ul {
+        display: flex;
+        gap: 1rem;
+        justify-content: center; /* Center navigation links horizontally */
+        list-style: none;
+        transition: color 0.3s ease, border-bottom 0.3s ease;
+    }
+
+    nav li a {
+        margin: 0 15px; /* Add margin for spacing between links */
+        text-decoration: none; /* Remove default underline decoration */
+        color: #333; /* Set color for navigation links */
+        padding: 10px; /* Add padding for spacing */
+    }
+
+    nav a.active {
+        border-bottom: 0.5px solid #3333337c;
+        color: #333;
+    }
+
+    .home-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Align items vertically */
+        gap: 6rem; /* Space between the image and text */
+        max-width: 80%; /* Limit the width for better responsiveness */
+        margin: 0 auto; /* Center the section on the page */
+    }
+
+    .project-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 50px;
+        width: 100%;
+    }
+
+    .project-card img {
+        max-width: 100%;
+        height: auto;
+        margin: 0;
+        padding: 0;
+    }
+
+    .project-details {
+        width: 100%;
+    }
+
+    .contactme {
+        display: flex;
+        flex-direction: column;
+        text-align: justify;
+        margin: auto;
+        max-width: 90%; /* Limit maximum width of the grid container */
+        gap: 30px; /* Space between elements */
+        padding: 20px; /* Increase padding for more spacing */
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+    /* Styles for screens between 768px and 992px */
+    header {
+        padding: 50px;
+    }
+
+    /* Styling for the header title */
+    .header-title {
+        margin-bottom: 40px; /* Add spacing below title */
+    }
+
+    /* Styling for the navigation links */
+    nav ul {
+        display: flex;
+        gap: 1rem;
+        justify-content: center; /* Center navigation links horizontally */
+        list-style: none;
+        transition: color 0.3s ease, border-bottom 0.3s ease;
+    }
+
+    nav li a {
+        margin: 0 15px; /* Add margin for spacing between links */
+        text-decoration: none; /* Remove default underline decoration */
+        color: #333; /* Set color for navigation links */
+        padding: 10px; /* Add padding for spacing */
+    }
+
+    nav a.active {
+        border-bottom: 0.5px solid #3333337c;
+        color: #333;
+    }
+
+    .home-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Align items vertically */
+        gap: 6rem; /* Space between the image and text */
+        max-width: 80%; /* Limit the width for better responsiveness */
+        margin: 0 auto; /* Center the section on the page */
+    }
+
+    .project-card {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    header {
+        padding: calc(20px + (40px - 20px) * ((100vw - 576px) / (768px - 576px)));
+    }
+
+    .home-section {
+        flex-direction: column;
+        gap: 2rem; /* Reduce gap for smaller screens */
+    }
+
+    .project-card {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-details {
+        width: 100%;
+        text-align: center;
+    }
+}
