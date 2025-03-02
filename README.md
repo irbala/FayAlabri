@@ -1,6 +1,6 @@
 Fay Alabri - Web Developer Portfolio
 
-Click here to visit my portfolio: [Your Portfolio Link Here]
+Click here to visit my portfolio: https://irbala.github.io/FayAlabri/
 
 Welcome to my personal portfolio! 
 This website is a reflection of my journey as a passionate Web Developer and UX/UI Designer , showcasing my skills, projects, and experiences in the world of web development. Designed with creativity and functionality in mind, this portfolio highlights my ability to craft visually appealing, responsive, and user-friendly web solutions.
