@@ -268,6 +268,7 @@ p {
     padding: 40px; /* Increase padding for more spacing */
     margin: auto; /* Center the div horizontally */
     max-width: 65%; /* Limit the width of the content */
+    padding-bottom: 60px; /* Add padding to prevent overlap with footer */
 }
 
 .about-title {
