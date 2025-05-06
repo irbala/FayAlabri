@@ -105,8 +105,7 @@ p {
 #main-outlet {
     background: rgb(243, 242, 255);
     background: linear-gradient(0deg, rgba(243, 242, 255, 1) 33%, rgba(255, 255, 255, 0) 100%);
-    max-height: 100%;
-    min-height: 100vh;
+    height: 0;
     width: 100%;
 }
 
@@ -120,19 +119,15 @@ p {
 
 /* home page styling */
 .home-section {
+    font-size: 16px;
+    line-height: 1.5;
     display: flex;
-    align-items: center; /* Align items vertically */
-    gap: 6rem; /* Space between the image and text */
-    max-width: 80%; /* Limit the width for better responsiveness */
-    margin: 0 auto; /* Center the section on the page */
-}
-
-/* Image Styling */
-.home-section img {
-    width: 200px; /* Adjust the size of the image */
-    height: auto;
-    flex-shrink: 0; /* Prevent the image from shrinking on smaller screens */
-    opacity: 90%;
+    flex-direction: column;
+    justify-content: center;
+    text-align: justify;
+    padding: 40px; /* Increase padding for more spacing */
+    margin: auto; /* Center the div horizontally */
+    max-width: 65%; /* Limit the width of the content */
 }
 
 /* Text Content Styling */
@@ -272,7 +267,7 @@ p {
     text-align: justify;
     padding: 40px; /* Increase padding for more spacing */
     margin: auto; /* Center the div horizontally */
-    max-width: 80%; /* Limit the width of the content */
+    max-width: 65%; /* Limit the width of the content */
 }
 
 .about-title {
@@ -331,6 +326,8 @@ p {
 
 /* footer settings */
 footer {
+    position: fixed;
+    bottom: 0;
     background-color: #ffffff;
     width: 100%;
     margin: 0;
@@ -338,6 +335,7 @@ footer {
     display: flex;
     justify-content:space-around;
     align-items:center;
+    border-top: #ebebeb solid 1px;
 }
 
 footer p {
