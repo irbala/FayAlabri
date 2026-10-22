@@ -42,7 +42,7 @@ How to Use This Repository
 
 Explore the Pages 
 
-Navigate through the index.html (Work), about.html (About), and contact.html (Contact) pages to explore the full website.
+Navigate through index.html (Home), work.html (Work), about.html (About) and contact.html (Contact) to explore the full website. 404.html is the custom page GitHub Pages shows for missing pages.
 
 -----------------------------
 
