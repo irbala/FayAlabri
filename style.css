@@ -105,7 +105,7 @@ p {
 #main-outlet {
     background: rgb(243, 242, 255);
     background: linear-gradient(0deg, rgba(243, 242, 255, 1) 33%, rgba(255, 255, 255, 0) 100%);
-    height: 0;
+    height: auto; /* Grow with the content so the footer comes after it */
     width: 100%;
 }
 
@@ -339,6 +339,11 @@ footer {
     border-top: #ebebeb solid 1px;
 }
 
+/* Leave room at the bottom so the fixed footer never covers the page content */
+body {
+    padding-bottom: 80px;
+}
+
 footer p {
     font-size: 16px;
     color: #333;
@@ -509,5 +514,36 @@ footer p {
     .project-details {
         width: 100%;
         text-align: center;
+    }
+
+    header {
+        padding: 30px 16px;
+    }
+
+    /* Keep the four nav links on screen */
+    nav ul {
+        flex-wrap: wrap;
+        gap: 0.25rem;
+    }
+
+    nav li a {
+        margin: 0 4px;
+    }
+
+    /* On phones the footer sits after the content instead of floating over it */
+    body {
+        padding-bottom: 0;
+    }
+
+    footer {
+        position: static;
+        flex-direction: column;
+        gap: 10px;
+        padding: 20px 10px;
+        margin-top: 40px;
+    }
+
+    footer p {
+        font-size: 14px;
     }
 }
