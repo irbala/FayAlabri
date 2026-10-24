@@ -1,6 +1,18 @@
 /* Website font */
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
 
+/* Colours and sizes used across the site */
+:root {
+    --text: #27272a;
+    --text-soft: #52525b;
+    --line: rgba(39, 39, 42, 0.1);
+    --card: rgba(255, 255, 255, 0.72);
+    --card-solid: #ffffff;
+    --accent: #6d5bd0; /* Deeper lavender for links and focus */
+    --radius: 16px;
+    --shadow: 0 10px 30px rgba(109, 91, 208, 0.08);
+}
+
 /* Universal Styles */
 * {
     margin: 0;
@@ -8,542 +20,412 @@
     box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 
-/* Define font sizes and line-height for headings */
-h1 {
-    font-size: 3.9rem;
-    line-height: 1.2;
-}
-
-h2 {
-    font-size: 1.5rem;
-    line-height: 1.3;
-}
-
-h3 {
-    font-size: 1.4rem;
-    line-height: 1.4;
-}
-
-h4 {
-    font-size: 1rem;
-    line-height: 1.5;
-}
-
-h5 {
-    font-size: 0.875rem;
-    line-height: 1.6;
-}
-
-h6 {
-    font-size: 0.75rem;
-    line-height: 1.7;
-}
-
 /* Body styling */
 body {
-    /* Gradient Background */
-    background-image: linear-gradient(to right, #e6d5ff, #e6d5ff, #ebdfff, #f0e8ff, #f6f2ff, #faf8ff, #faf9ff, #f3f2ff, #e9e9ff, #dee0ff, #d6dcff, #c8d4ff);
-    /* Font */
-    color: #27272a;
+    /* Lavender gradient running left to right, so it looks the same at any page length */
+    background-image: linear-gradient(to right, #e6d5ff, #ebdfff, #f6f2ff, #faf9ff, #e9e9ff, #d6dcff, #c8d4ff);
+    color: var(--text);
     font-family: "Sora", sans-serif;
+    line-height: 1.6;
     text-align: center;
-    /* Set minimum height to 100% of the viewport height */
-    min-height: 100vh; 
-    display: block;
+    /* Header, page content and footer stacked, footer pushed to the bottom */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     overflow-x: hidden;
 }
 
-/* Styling header */
+a {
+    color: inherit;
+}
+
+a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 6px;
+}
+
+/* Header */
 header {
-    width: 100%; /* Make header span full width */
-    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1); /* Add shadow for depth */
-    padding: 50px; /* Add padding */
-    margin-bottom: 50px;
+    width: 100%;
+    padding: 48px 20px 0;
+    border-bottom: 1px solid var(--line);
 }
 
-/* Styling for the header title */
-.header-title {
-    margin-bottom: 40px; /* Add spacing below title */
+.header-title h1 {
+    font-size: clamp(2.4rem, 7vw, 3.9rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
 }
 
-/* Styling for the navigation links */
+.header-title h3 {
+    font-size: clamp(1rem, 2.6vw, 1.25rem);
+    font-weight: 500;
+    color: var(--text-soft);
+    margin-top: 6px;
+}
+
+/* Navigation */
 nav ul {
     display: flex;
-    gap: 1rem;
-    justify-content: center; /* Center navigation links horizontally */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
     list-style: none;
-    transition: color 0.3s ease, border-bottom 0.3s ease;
+    margin-top: 28px;
 }
 
 nav li a {
-    display: inline-block; /* Display links in a row */
-    margin: 0 15px; /* Add margin for spacing between links */
-    text-decoration: none; /* Remove default underline decoration */
-    color: #333; /* Set color for navigation links */
-    padding: 10px; /* Add padding for spacing */
+    display: inline-block;
+    padding: 12px 18px;
+    color: var(--text-soft);
+    text-decoration: none;
+    font-size: 0.95rem;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+nav li a:hover {
+    color: var(--text);
+    border-bottom-color: rgba(39, 39, 42, 0.25);
 }
 
 nav a.active {
-    border-bottom: 0.5px solid #3333337c;
-    color: #333;
+    color: var(--text);
+    font-weight: 600;
+    border-bottom-color: var(--text);
 }
 
-nav a:hover {
-    padding-bottom: 10px;
-    border-bottom: solid 1px #3333337c;
-}
-
-/* Styling for paragraphs */
-p {
-    color: #52525b;
-    text-align: left;
-    width: 90%;
-    font-size: 16px;
-    line-height: 2;
-}
-
-#main-outlet {
-    background: rgb(243, 242, 255);
-    background: linear-gradient(0deg, rgba(243, 242, 255, 1) 33%, rgba(255, 255, 255, 0) 100%);
-    height: auto; /* Grow with the content so the footer comes after it */
-    width: 100%;
-}
-
-/* styling for work page cuz it didnt work */
+/* Page content area (fills the space between header and footer) */
+#main-outlet,
 #main-outlet-work {
-    background: rgb(243, 242, 255);
-    background: linear-gradient(0deg, rgba(243, 242, 255, 1) 33%, rgba(255, 255, 255, 0) 100%);
-    max-height: 100%;
-    width: 100%; /* Take up full width */
+    flex: 1;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 56px 20px 72px;
 }
 
-/* home page styling */
-.home-section {
-    font-size: 16px;
-    line-height: 1.5;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: justify;
-    padding: 40px; /* Increase padding for more spacing */
-    margin: auto; /* Center the div horizontally */
-    max-width: 65%; /* Limit the width of the content */
+/* Shared glassy panel for the home, about, contact and 404 content */
+.home-section,
+.about-content,
+.contactme,
+.error-content {
+    background: var(--card);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 48px;
+    text-align: left;
 }
 
-/* Text Content Styling */
+/* Paragraphs */
+p {
+    color: var(--text-soft);
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+/* Home page */
 .text-content {
     display: flex;
-    flex-direction: column; /* Stack text and buttons vertically */
-    gap: 1rem; /* Space between elements */
-    text-align: left; /* Align text to the left */
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .text-content h2 {
-    font-size: 2.5rem;
-    margin: 0;
-    color: #333;
+    font-size: clamp(2rem, 5vw, 2.6rem);
+    line-height: 1.2;
 }
 
 .text-content p {
-    font-size: 1.25rem;
-    margin: 0;
-    color: #666;
-    line-height: 1.6;
+    font-size: 1.15rem;
 }
 
-/* call to action buttons */
+/* Call to action buttons */
 .cta-buttons {
     display: flex;
-    gap: 1rem;
-    justify-content: center;
-    margin-top: 2rem;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 1.5rem;
 }
 
 .cta-button {
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    font-weight: bold;
+    display: inline-block;
+    padding: 0.8rem 1.4rem;
+    font-size: 0.95rem;
+    font-weight: 600;
     text-decoration: none;
-    border-radius: 4px;
-    background-color: #ffffff;
-    color: #333;
-    border: solid 0.5px #e9e9e9;
+    border-radius: 999px;
+    background-color: var(--card-solid);
+    color: var(--text);
+    border: 1px solid var(--line);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
-/* Styling for the project cards container */
-.work {
-    background: none; /* Remove background color and gradient */
-    width: 100%;
-    padding: 20px; /* Add padding for spacing */
-    box-sizing: border-box; /* Include padding in the width calculation */
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(39, 39, 42, 0.1);
+}
+
+.cta-button.primary {
+    background-color: var(--text);
+    border-color: var(--text);
+    color: #ffffff;
+}
+
+.cta-button.primary:hover {
+    background-color: #3f3f46;
+}
+
+/* About page */
+.about-title,
+.contactme h2 {
+    font-size: 2rem;
+    margin-bottom: 16px;
+}
+
+.aboutme-list {
+    margin: 24px 0;
+    padding-left: 1.2rem;
+    color: var(--text-soft);
+}
+
+.aboutme-list li {
+    margin-bottom: 12px;
+    padding-left: 4px;
+}
+
+.aboutme-list li::marker {
+    color: var(--accent);
+}
+
+.aboutme-list strong {
+    color: var(--text);
+}
+
+/* Contact page */
+.contactme {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center content horizontally */
+    gap: 14px;
 }
 
-/* Styling for project cards */
+.contactme a {
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+}
+
+/* 404 page */
+.error-content {
+    max-width: 480px;
+    text-align: center;
+}
+
+.error-content h1 {
+    font-size: 4rem;
+    line-height: 1;
+    margin-bottom: 12px;
+}
+
+.error-content .cta-buttons {
+    justify-content: center;
+}
+
+/* Work page: list of project cards */
+.work {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
 .project-card {
     display: flex;
-    flex-direction: row;
-    background-color: #ffffff;
-    border-radius: 8px;
+    gap: 28px;
+    align-items: center;
+    background: var(--card-solid);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
     padding: 20px;
-    margin-bottom: 50px;
-    width: 90%;
-    max-width: 850px;
+    text-align: left;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 36px rgba(109, 91, 208, 0.14);
+}
+
+.project-image {
+    flex: 0 0 220px;
 }
 
 .project-card img {
-    max-width: 90%;
-    height: auto;
-    border-radius: 8px;
-    margin-right: 20px;
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 12px;
 }
 
 .project-details {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    width: 50%; /* Ensure it takes up the remaining space */
+    gap: 10px;
 }
 
 .project-card h3 {
-    font-size: 1.2rem;
-    margin: 0 0 10px 0;
+    font-size: 1.25rem;
 }
 
 .project-card p {
-    color: #666;
-    font-size: 1rem;
-    margin: 0 0 20px 0;
+    font-size: 0.95rem;
+    line-height: 1.7;
 }
 
-.navigation-button,
-.github-link {
-    text-align: center;
-    margin-top: 10px;
+.project-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 4px;
 }
 
 .icon-link {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 36px;
-    height: 36px;
+    width: 40px;
+    height: 40px;
     background-color: #fff;
-    border: 1px solid #ddd;
+    border: 1px solid var(--line);
     border-radius: 50%;
+    color: var(--text);
     text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 .icon-link:hover {
-    background-color: #f0f0f0;
-    transform: scale(1.1);
+    background-color: #f3f0ff;
+    transform: scale(1.08);
 }
 
 .icon-link svg {
     width: 20px;
     height: 20px;
-    color: #333; /* Default icon color */
 }
 
-.icon-link.github-icon svg {
-    color: #333; /* GitHub's dark gray */
-}
-
-.icon-link.website-icon svg {
-    color: #333; /* Blue for the website icon */
-}
-
-/* about me */
-
-.about-content {
-    font-size: 16px;
-    line-height: 1.5;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: justify;
-    padding: 40px; /* Increase padding for more spacing */
-    margin: auto; /* Center the div horizontally */
-    max-width: 65%; /* Limit the width of the content */
-    padding-bottom: 60px; /* Add padding to prevent overlap with footer */
-}
-
-.about-title {
-    font-size: 2rem; /* Adjust font size */
-    color: #333; /* Set text color */
-    margin: 20px; /* Add spacing below the title */
-}
-
-.aboutme-list {
-    width: 75%;
-    text-align: left;
-    margin: 20px 0; /* Increase margin for more spacing */
-    padding: 10px;
-}
-
-.aboutme-list li {
-    margin-bottom: 10px; /* Add spacing between list items */
-}
-
-/* Additional styling for h2 */
-.about-content h2 {
-    margin-bottom: 20px; /* Add spacing below h2 */
-}
-
-/* contact me page */
-
-.contactme {
-    display: flex;
-    flex-direction: column;
-    text-align: justify;
-    margin: auto;
-    max-width: 70%; /* Limit maximum width of the grid container */
-    gap: 20px; /* Space between elements */
-    padding: 40px; /* Increase padding for more spacing */
-}
-
-.contactme a {
-    color: #333;
-    font-weight: bold;
-}
-
-.contactme h2 {
-    font-size: 2rem; /* Adjust font size */
-    color: #333; /* Set text color */
-    margin: 10px; /* Add spacing below the title */
-}
-
-.error-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    margin: auto; /* Center the div horizontally */
-    max-width: 30%; /* Limit the width of the content */
-}
-
-/* footer settings */
+/* Footer: sits at the bottom of the page, after the content */
 footer {
-    position: fixed;
-    bottom: 0;
-    background-color: #ffffff;
     width: 100%;
-    margin: 0;
-    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-top: 1px solid var(--line);
+    padding: 18px 20px;
     display: flex;
-    justify-content:space-around;
-    align-items:center;
-    border-top: #ebebeb solid 1px;
-}
-
-/* Leave room at the bottom so the fixed footer never covers the page content */
-body {
-    padding-bottom: 80px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    /* Keep the footer content in line with the page content */
+    padding-left: max(20px, calc((100% - 1000px) / 2 + 20px));
+    padding-right: max(20px, calc((100% - 1000px) / 2 + 20px));
 }
 
 footer p {
-    font-size: 16px;
-    color: #333;
+    font-size: 0.9rem;
     margin: 0;
 }
 
 .social-icons {
     display: flex;
-    justify-content: center;
-    gap: 1rem;
+    gap: 0.5rem;
     list-style: none;
-    padding: 0;
-    margin: 0;
 }
 
 .social-icons li a {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
-    background-color: #fff;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    color: var(--text);
     text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.social-icons li a:hover {
+    background-color: #f3f0ff;
 }
 
 .social-icons svg {
     width: 20px;
-    height: auto;
-    color: #333;
+    height: 20px;
 }
 
-
-
-/* Responsive Design Adjustments */
-
+/* Tablets */
 @media only screen and (max-width: 768px) {
-    /* Styles for screens smaller than 768px */
     header {
-        padding: calc(20px + (40px - 20px) * ((viewport-width - 576px) / (768px - 576px))); /* Smooth padding transition */
+        padding-top: 36px;
     }
 
-    /* Styling for the header title */
-    .header-title {
-        margin-bottom: 40px; /* Add spacing below title */
+    #main-outlet,
+    #main-outlet-work {
+        padding: 36px 16px 48px;
     }
 
-    /* Styling for the navigation links */
-    nav ul {
-        display: flex;
-        gap: 1rem;
-        justify-content: center; /* Center navigation links horizontally */
-        list-style: none;
-        transition: color 0.3s ease, border-bottom 0.3s ease;
-    }
-
-    nav li a {
-        margin: 0 15px; /* Add margin for spacing between links */
-        text-decoration: none; /* Remove default underline decoration */
-        color: #333; /* Set color for navigation links */
-        padding: 10px; /* Add padding for spacing */
-    }
-
-    nav a.active {
-        border-bottom: 0.5px solid #3333337c;
-        color: #333;
-    }
-
-    .home-section {
-        display: flex;
-        flex-direction: column;
-        align-items: center; /* Align items vertically */
-        gap: 6rem; /* Space between the image and text */
-        max-width: 80%; /* Limit the width for better responsiveness */
-        margin: 0 auto; /* Center the section on the page */
+    .home-section,
+    .about-content,
+    .contactme,
+    .error-content {
+        padding: 32px 24px;
     }
 
     .project-card {
-        display: flex;
         flex-direction: column;
-        justify-content: center;
-        margin-bottom: 50px;
-        width: 100%;
+        align-items: stretch;
+    }
+
+    .project-image {
+        flex-basis: auto;
     }
 
     .project-card img {
-        max-width: 100%;
-        height: auto;
-        margin: 0;
-        padding: 0;
-    }
-
-    .project-details {
-        width: 100%;
-    }
-
-    .contactme {
-        display: flex;
-        flex-direction: column;
-        text-align: justify;
-        margin: auto;
-        max-width: 90%; /* Limit maximum width of the grid container */
-        gap: 30px; /* Space between elements */
-        padding: 20px; /* Increase padding for more spacing */
-    }
-}
-
-@media only screen and (min-width: 769px) and (max-width: 992px) {
-    /* Styles for screens between 768px and 992px */
-    header {
-        padding: 50px;
-    }
-
-    /* Styling for the header title */
-    .header-title {
-        margin-bottom: 40px; /* Add spacing below title */
-    }
-
-    /* Styling for the navigation links */
-    nav ul {
-        display: flex;
-        gap: 1rem;
-        justify-content: center; /* Center navigation links horizontally */
-        list-style: none;
-        transition: color 0.3s ease, border-bottom 0.3s ease;
-    }
-
-    nav li a {
-        margin: 0 15px; /* Add margin for spacing between links */
-        text-decoration: none; /* Remove default underline decoration */
-        color: #333; /* Set color for navigation links */
-        padding: 10px; /* Add padding for spacing */
-    }
-
-    nav a.active {
-        border-bottom: 0.5px solid #3333337c;
-        color: #333;
-    }
-
-    .home-section {
-        display: flex;
-        flex-direction: column;
-        align-items: center; /* Align items vertically */
-        gap: 6rem; /* Space between the image and text */
-        max-width: 80%; /* Limit the width for better responsiveness */
-        margin: 0 auto; /* Center the section on the page */
-    }
-
-    .project-card {
-        width: 90%;
-    }
-}
-
-@media only screen and (max-width: 768px) {
-    header {
-        padding: calc(20px + (40px - 20px) * ((100vw - 576px) / (768px - 576px)));
-    }
-
-    .home-section {
-        flex-direction: column;
-        gap: 2rem; /* Reduce gap for smaller screens */
-    }
-
-    .project-card {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .project-details {
-        width: 100%;
-        text-align: center;
-    }
-
-    header {
-        padding: 30px 16px;
-    }
-
-    /* Keep the four nav links on screen */
-    nav ul {
-        flex-wrap: wrap;
-        gap: 0.25rem;
-    }
-
-    nav li a {
-        margin: 0 4px;
-    }
-
-    /* On phones the footer sits after the content instead of floating over it */
-    body {
-        padding-bottom: 0;
+        aspect-ratio: 16 / 10;
     }
 
     footer {
-        position: static;
         flex-direction: column;
-        gap: 10px;
-        padding: 20px 10px;
-        margin-top: 40px;
+        text-align: center;
+    }
+}
+
+/* Phones */
+@media only screen and (max-width: 480px) {
+    nav li a {
+        padding: 10px 12px;
     }
 
-    footer p {
-        font-size: 14px;
+    .cta-buttons {
+        flex-direction: column;
+    }
+
+    .cta-button {
+        text-align: center;
+    }
+
+    .text-content p {
+        font-size: 1.05rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
     }
 }
