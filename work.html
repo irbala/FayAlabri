@@ -22,30 +22,88 @@
     <header>
         <div class="header-title">
             <h1>Fay Alabri</h1>
-            <h3>UX/UI Designer &amp; Web Developer</h3>
+            <p class="subtitle">UX/UI Designer &amp; Web Developer</p>
         </div>
-        <nav>
+        <nav aria-label="Main">
             <ul>
-                <li><a href="index.html" aria-label="Go to Home">Home</a></li>
-                <li><a href="work.html" class="active" aria-label="View My Work">Work</a></li>
-                <li><a href="about.html" aria-label="Learn About Me">About</a></li>
-                <li><a href="contact.html" aria-label="Contact Me">Contact</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="work.html" class="active" aria-current="page">Work</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
     
-<div id="main-outlet-work">
+<main>
     <section>
   <div class="work">
 
+                <!-- Project 4: Athkar -->
+    <article class="project-card">
+        <div class="project-image">
+            <img src="img/athkar.png" alt="Athkar - Morning and Evening Adhkar App">
+        </div>
+        <div class="project-details">
+            <h2>Athkar</h2>
+            <p>A calm Arabic web app for the morning and evening adhkar, designed for phones first. It shows one dhikr at a time, with a tap-to-count button that keeps track of the repetitions and moves on when each one is complete.
+            </p>
+            <div class="project-actions">
+                <a href="https://irbala.github.io/Athkar/" target="_blank" rel="noopener" class="icon-link website-icon" aria-label="Visit the Athkar website">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="29,6 29,4 3,4 3,23 14,23"/>
+                        <polyline points="15,29 10,29 12,26"/>
+                        <path d="M27,29h-7c-1.1,0-2-0.9-2-2V12c0-1.1,0.9-2,2-2h7c1.1,0,2,0.9,2,2v15C29,28.1,28.1,29,27,29z"/>
+                        <line x1="18" y1="23" x2="29" y2="23"/>
+                        <line x1="22" y1="26" x2="25" y2="26"/>
+                    </svg>
+                </a>
+                <a href="https://github.com/irbala/Athkar" target="_blank" rel="noopener" class="icon-link github-icon" aria-label="View Athkar on GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V19"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </article>
+
+
+                <!-- WebCraft -->
+    <article class="project-card">
+        <div class="project-image">
+            <img src="img/webcraft.png" alt="WebCraft - Learn to Code Playground">
+        </div>
+        <div class="project-details">
+            <h2>WebCraft</h2>
+            <p>A beginner-friendly coding playground. Each short lesson explains one idea in HTML, CSS or JavaScript, with a code editor, a live preview and a checklist. Finishing lessons earns coins that unlock new worlds, and progress is saved in the browser.
+            </p>
+            <div class="project-actions">
+                <a href="https://irbala.github.io/WebCraft/" target="_blank" rel="noopener" class="icon-link website-icon" aria-label="Visit the WebCraft website">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="29,6 29,4 3,4 3,23 14,23"/>
+                        <polyline points="15,29 10,29 12,26"/>
+                        <path d="M27,29h-7c-1.1,0-2-0.9-2-2V12c0-1.1,0.9-2,2-2h7c1.1,0,2,0.9,2,2v15C29,28.1,28.1,29,27,29z"/>
+                        <line x1="18" y1="23" x2="29" y2="23"/>
+                        <line x1="22" y1="26" x2="25" y2="26"/>
+                    </svg>
+                </a>
+                <a href="https://github.com/irbala/WebCraft" target="_blank" rel="noopener" class="icon-link github-icon" aria-label="View WebCraft on GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V19"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </article>
+
+
                 <!-- Project 1: Khalid Alabri Portfolio -->
-    <div class="project-card">
+    <article class="project-card">
         <div class="project-image">
             <img src="img/1.png" alt="Khalid Alabri Portfolio - Life Coaching Website">
         </div>
         <div class="project-details">
-            <h3>Dr. Khalid Alabri Portfolio</h3>
-            <p>A professional portfolio website featuring an integrated online booking system for life coaching services. Designed with a focus on user experience, this project showcases the client expertise and allows his patients to schedule sessions seamlessly.
+            <h2>Dr. Khalid Alabri</h2>
+            <p>A website for a certified trainer and coach. Visitors can read about him, browse photos from his talks and events, send a message through a contact form, and follow a link to book sessions through his online store. Hand-written HTML and CSS in Arabic, right to left.
             </p>
             <div class="project-actions">
                 <a href="https://irbala.github.io/kldmohd/" target="_blank" rel="noopener" class="icon-link website-icon" aria-label="Visit the website">
@@ -64,17 +122,17 @@
                 </a>
             </div>
         </div>
-    </div>
+    </article>
 
 
                 <!-- Project 2: Ateeq Store -->
-    <div class="project-card">
+    <article class="project-card">
         <div class="project-image">
-            <img src="img/3.png" alt="Ateeq Store - Online Perfume Shop">
+            <img src="img/3.png" alt="Ateeq Store - Perfume Shop Concept">
         </div>
         <div class="project-details">
-            <h3>Ateeq Store</h3>
-            <p>An online store for a Saudi brand that specializes in selling premium perfumes. This project combines a modern design with intuitive navigation, making it easy for customers to browse and purchase their favorite fragrances.
+            <h2>Ateeq Store</h2>
+            <p>A concept store for a Saudi perfume brand, in Arabic. Customers can browse the perfumes, add them to a cart, change quantities and see the total. The cart is saved in the browser as they move between pages.
             </p>
             <div class="project-actions">
                 <!-- Website Icon -->
@@ -95,17 +153,17 @@
                 </a>
             </div>
         </div>
-    </div>
+    </article>
 
 
 
                 <!-- Project 3: Deema's Art Portfolio -->
-    <div class="project-card">
+    <article class="project-card">
         <div class="project-image">
             <img src="img/2.png" alt="Deema's Art Portfolio - Artist Showcase">
         </div>
         <div class="project-details">
-            <h3>Deema's Art Portfolio</h3>
+            <h2>Deema's Art Portfolio</h2>
             <p>A creative showcase portfolio for Sirendema, highlighting her artistic talent and versatility. This project emphasizes visual storytelling and provides an immersive experience for art enthusiasts.
             </p>
             <div class="project-actions">
@@ -125,74 +183,16 @@
                 </a>
             </div>
         </div>
-    </div>
-
-
-                <!-- Project 4: Athkar -->
-    <div class="project-card">
-        <div class="project-image">
-            <img src="img/athkar.png" alt="Athkar - Morning and Evening Adhkar App">
-        </div>
-        <div class="project-details">
-            <h3>Athkar</h3>
-            <p>A calm Arabic web app for the morning and evening adhkar. It shows one dhikr at a time with simple controls and a sun and moon switch between morning and evening, and it is designed for phones first.
-            </p>
-            <div class="project-actions">
-                <a href="https://irbala.github.io/Athkar/" target="_blank" rel="noopener" class="icon-link website-icon" aria-label="Visit the Athkar website">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <polyline points="29,6 29,4 3,4 3,23 14,23"/>
-                        <polyline points="15,29 10,29 12,26"/>
-                        <path d="M27,29h-7c-1.1,0-2-0.9-2-2V12c0-1.1,0.9-2,2-2h7c1.1,0,2,0.9,2,2v15C29,28.1,28.1,29,27,29z"/>
-                        <line x1="18" y1="23" x2="29" y2="23"/>
-                        <line x1="22" y1="26" x2="25" y2="26"/>
-                    </svg>
-                </a>
-                <a href="https://github.com/irbala/Athkar" target="_blank" rel="noopener" class="icon-link github-icon" aria-label="View Athkar on GitHub">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github">
-                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V19"></path>
-                    </svg>
-                </a>
-            </div>
-        </div>
-    </div>
-
-
-                <!-- Project 5: Naqti -->
-    <div class="project-card">
-        <div class="project-image">
-            <img src="img/naqti.png" alt="Naqti - Camel Marketplace Concept">
-        </div>
-        <div class="project-details">
-            <h3>Naqti</h3>
-            <p>A camel marketplace concept with search, filters and listing cards, designed in HTML and Tailwind CSS with a warm desert palette.
-            </p>
-            <div class="project-actions">
-                <a href="https://irbala.github.io/Naqti/" target="_blank" rel="noopener" class="icon-link website-icon" aria-label="Visit the Naqti website">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <polyline points="29,6 29,4 3,4 3,23 14,23"/>
-                        <polyline points="15,29 10,29 12,26"/>
-                        <path d="M27,29h-7c-1.1,0-2-0.9-2-2V12c0-1.1,0.9-2,2-2h7c1.1,0,2,0.9,2,2v15C29,28.1,28.1,29,27,29z"/>
-                        <line x1="18" y1="23" x2="29" y2="23"/>
-                        <line x1="22" y1="26" x2="25" y2="26"/>
-                    </svg>
-                </a>
-                <a href="https://github.com/irbala/Naqti" target="_blank" rel="noopener" class="icon-link github-icon" aria-label="View Naqti on GitHub">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github">
-                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V19"></path>
-                    </svg>
-                </a>
-            </div>
-        </div>
-    </div>
+    </article>
 
 
                 <!-- Project 6: Twitch Chat Viewer -->
-    <div class="project-card">
+    <article class="project-card">
         <div class="project-image">
             <img src="img/chat.png" alt="Twitch Chat Viewer - Customizable Chat Embed">
         </div>
         <div class="project-details">
-            <h3>Twitch Chat Viewer</h3>
+            <h2>Twitch Chat Viewer</h2>
             <p>A customizable viewer for any streamer's Twitch chat, with light, dark and cozy themes and a custom background color. Preferences are saved in the browser.
             </p>
             <div class="project-actions">
@@ -212,16 +212,16 @@
                 </a>
             </div>
         </div>
-    </div>
+    </article>
 
 
                 <!-- Project 7: London Trip Planner -->
-    <div class="project-card">
+    <article class="project-card">
         <div class="project-image">
             <img src="img/london.png" alt="London Trip Planner - Arabic Travel Guide">
         </div>
         <div class="project-details">
-            <h3>London Trip Planner</h3>
+            <h2>London Trip Planner</h2>
             <p>An Arabic travel planner for London and Brighton with cafes, restaurants, shopping and things to do. Every place links to Instagram and Google Maps, and the home page shows the weather.
             </p>
             <div class="project-actions">
@@ -241,16 +241,16 @@
                 </a>
             </div>
         </div>
-    </div>
+    </article>
 
 
                 <!-- Project 8: Edinburgh Travel Guide -->
-    <div class="project-card">
+    <article class="project-card">
         <div class="project-image">
             <img src="img/edinburgh.png" alt="Edinburgh Travel Guide">
         </div>
         <div class="project-details">
-            <h3>Edinburgh Travel Guide</h3>
+            <h2>Edinburgh Travel Guide</h2>
             <p>A bilingual guide to Edinburgh's cafes, restaurants, shopping and nature spots, with a fixed menu to jump between sections and a map link for every place.
             </p>
             <div class="project-actions">
@@ -270,13 +270,69 @@
                 </a>
             </div>
         </div>
-    </div>
+    </article>
+                <!-- Bodrum Travel Guide -->
+    <article class="project-card">
+        <div class="project-image">
+            <img src="img/bodrum.png" alt="Bodrum Travel Guide">
+        </div>
+        <div class="project-details">
+            <h2>Bodrum Travel Guide</h2>
+            <p>An Arabic one-page guide to Bodrum's restaurants, shopping and places to visit, with a full-width hero and photo cards that open each place's Instagram page.
+            </p>
+            <div class="project-actions">
+                <a href="https://irbala.github.io/Bodrum/" target="_blank" rel="noopener" class="icon-link website-icon" aria-label="Visit the Bodrum Travel Guide website">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="29,6 29,4 3,4 3,23 14,23"/>
+                        <polyline points="15,29 10,29 12,26"/>
+                        <path d="M27,29h-7c-1.1,0-2-0.9-2-2V12c0-1.1,0.9-2,2-2h7c1.1,0,2,0.9,2,2v15C29,28.1,28.1,29,27,29z"/>
+                        <line x1="18" y1="23" x2="29" y2="23"/>
+                        <line x1="22" y1="26" x2="25" y2="26"/>
+                    </svg>
+                </a>
+                <a href="https://github.com/irbala/Bodrum" target="_blank" rel="noopener" class="icon-link github-icon" aria-label="View Bodrum Travel Guide on GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V19"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </article>
+                <!-- Project 5: Naqti -->
+    <article class="project-card">
+        <div class="project-image">
+            <img src="img/naqti.png" alt="Naqti - Camel Marketplace Concept">
+        </div>
+        <div class="project-details">
+            <h2>Naqti <span class="tag">Design concept</span></h2>
+            <p>A design concept for a camel marketplace, with search, filters and listing cards in a warm desert palette. It is a static mock-up, so the controls are for show.
+            </p>
+            <div class="project-actions">
+                <a href="https://irbala.github.io/Naqti/" target="_blank" rel="noopener" class="icon-link website-icon" aria-label="Visit the Naqti website">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="29,6 29,4 3,4 3,23 14,23"/>
+                        <polyline points="15,29 10,29 12,26"/>
+                        <path d="M27,29h-7c-1.1,0-2-0.9-2-2V12c0-1.1,0.9-2,2-2h7c1.1,0,2,0.9,2,2v15C29,28.1,28.1,29,27,29z"/>
+                        <line x1="18" y1="23" x2="29" y2="23"/>
+                        <line x1="22" y1="26" x2="25" y2="26"/>
+                    </svg>
+                </a>
+                <a href="https://github.com/irbala/Naqti" target="_blank" rel="noopener" class="icon-link github-icon" aria-label="View Naqti on GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V19"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </article>
+
+
     </div>
 </section>
-</div>
+</main>
 
 <footer>
-    <p>&copy; 2025 Fay Alabri. All rights reserved.</p>
+    <p>&copy; 2026 Fay Alabri. All rights reserved.</p>
     <ul class="social-icons">
         <li>
             <a href="https://github.com/irbala" target="_blank" rel="noopener" aria-label="GitHub">
