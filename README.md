@@ -27,7 +27,7 @@ Key Features
 - Clean and Modern Design : Tailored to effectively showcase my work and provide a seamless user experience.
 - Intuitive Navigation : Easy-to-use navigation bar allows visitors to explore projects, learn about me, and contact me effortlessly.
 - Fully Responsive Layout : Optimized for all devices, ensuring a consistent experience on desktops, tablets, and mobile phones.
-- Interactive Elements : Powered by HTML , CSS , and JavaScript , including hover effects, smooth transitions, and SVG icons for enhanced interactivity.
+- Interactive Elements : Built with HTML and CSS, including hover effects, smooth transitions, and SVG icons.
 
 -----------------------------
 
@@ -35,7 +35,7 @@ Topics
 Web Development
 Portfolio Design
 Responsive Layout
-Tech Stack: HTML, CSS, JavaScript
+Tech Stack: HTML, CSS
 How to Use This Repository
 
 -----------------------------
