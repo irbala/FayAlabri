@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Fay Alabri">
+    <title>Building Arabic websites that read right to left | Fay Alabri</title>
+    <meta name="description" content="Six things Fay Alabri does on every Arabic, right-to-left website.">
+    <link rel="icon" type="image/png" href="../img/icon.png">
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QK3Y5M2V5M"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-QK3Y5M2V5M');
+    </script>
+</head>
+<body>
+    <header>
+        <div class="header-title">
+            <h1>Fay Alabri</h1>
+            <p class="subtitle">UX/UI Designer &amp; Web Developer</p>
+        </div>
+        <nav aria-label="Main">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../work.html">Work</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../blog.html" class="active">Blog</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    
+    <main>
+        <article class="post">
+            <a href="../blog.html" class="back-link">&larr; All posts</a>
+            <p class="post-meta"><time datetime="2026-11-19">19 November 2026</time> &middot; 5 min read</p>
+            <h2>Building Arabic websites that read right to left</h2>
+
+            <p>Most of my projects are in Arabic: an adhkar app, a perfume store, a coaching site for a client and travel guides for my family. Arabic reads right to left, and a page that simply translates English text into Arabic ends up feeling backwards. These are the six things I now do on every Arabic site.</p>
+
+            <h3>1. Set the language and direction once, on &lt;html&gt;</h3>
+            <p>Every Arabic page starts with this line:</p>
+            <pre><code>&lt;html lang="ar" dir="rtl"&gt;</code></pre>
+            <p><code>dir="rtl"</code> flips the whole layout: text aligns to the right, flex rows start on the right and lists put their bullets on the right. <code>lang="ar"</code> tells screen readers to use an Arabic voice and helps the browser choose the right font. Setting both on <code>&lt;html&gt;</code> means I don't have to fix direction element by element.</p>
+
+            <h3>2. Keep numbers and English reading left to right</h3>
+            <p>Inside right-to-left text, numbers and Latin text can get shuffled. A phone number like <code>+966 56 394 7284</code> can show up with its parts in the wrong order. I wrap these in their own direction:</p>
+            <pre><code>&lt;a href="tel:+966563947284" dir="ltr"&gt;+966 56 394 7284&lt;/a&gt;</code></pre>
+            <p>In <a href="https://irbala.github.io/Athkar/">Athkar</a> the counter ("2 / 32") and the English copyright line get the same treatment, so they always read naturally.</p>
+
+            <h3>3. Mark the language of mixed text</h3>
+            <p>My <a href="https://irbala.github.io/edinburgh/">Edinburgh guide</a> is bilingual. The page itself is English, and every Arabic label is wrapped in <code>&lt;span lang="ar"&gt;</code>. Screen readers switch voice at the right moment, and the font stack falls back to an Arabic font for just those words.</p>
+
+            <h3>4. Use logical CSS properties</h3>
+            <p><code>margin-left</code> means "left" in every language, which is wrong half the time on a bilingual site. <code>margin-inline-start</code> means "the side where the line starts", so it follows the text direction. In the <a href="https://irbala.github.io/ateeq/">Ateeq store</a> the item count beside the cart link uses it, so the spacing is right without a separate RTL rule.</p>
+
+            <h3>5. Flip arrows and icons that show direction</h3>
+            <p>In a right-to-left app, "next" is on the left. Athkar's next button points left (&larr;) and previous points right (&rarr;), and each button has an Arabic <code>aria-label</code> so screen reader users hear "<span lang="ar">التالي</span>" and "<span lang="ar">السابق</span>" instead of "arrow".</p>
+
+            <h3>6. Choose the Arabic font on purpose</h3>
+            <p>Arabic fonts carry a lot of the personality of a page. I pick them like I pick colours:</p>
+            <ul>
+                <li><strong>Noto Sans Arabic</strong> for long reading, like the adhkar text in Athkar</li>
+                <li><strong>Noto Kufi Arabic</strong> for headings and a more structured feel, like the Ateeq store</li>
+                <li><strong>Tajawal</strong> for a clean, modern look, paired with Playfair Display in my Bodrum guide</li>
+            </ul>
+
+            <h3>What I'd tell myself at the start</h3>
+            <p>Design the Arabic version first, not as a translation of an English layout. Most RTL bugs come from treating right to left as an afterthought.</p>
+        </article>
+    </main>
+
+    
+    <footer>
+        <p>&copy; 2026 Fay Alabri. All rights reserved.</p>
+        <ul class="social-icons">
+            <li>
+                <a href="https://github.com/irbala" target="_blank" rel="noopener" aria-label="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V19"></path>
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="https://linkedin.com/in/fayalabri" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="https://instagram.com/ifaerie_" target="_blank" rel="noopener" aria-label="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="https://x.com/ifaerie_" target="_blank" rel="noopener" aria-label="X (Twitter)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter">
+                        <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </footer>
+</body>
+</html>
