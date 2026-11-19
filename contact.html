@@ -29,6 +29,7 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="work.html">Work</a></li>
                 <li><a href="about.html">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
                 <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
             </ul>
         </nav>
@@ -39,25 +40,47 @@
 
 
     <main>
-    <section>
+        <section>
             <div class="contactme">
-                    <h2>Contact me</h2>
-            <p>Have a website in mind, or one that needs a refresh? I build and redesign websites in Arabic and English, and I'm happy to talk through your idea, even if it's still rough.</p>
-            <p>Send me a few lines about what you need and I'll get back to you.</p>
-            <p>Email: 
-                <a href="mailto:fayalabri@gmail.com">fayalabri@gmail.com</a>
-            </p>
-            
-</div>
+                <h2>Contact me</h2>
+                <p>Have a website in mind, or one that needs a refresh? I build and redesign websites in Arabic and English, and I'm happy to talk through your idea, even if it's still rough.</p>
+                <p>Send me a few lines about what you need and I'll get back to you.</p>
 
+                <div class="email-row">
+                    <p>Email: <a href="mailto:fayalabri@gmail.com">fayalabri@gmail.com</a></p>
+                    <!-- Shown by contact.js when the browser can copy to the clipboard -->
+                    <button type="button" class="copy-button" id="copy-email" data-email="fayalabri@gmail.com" hidden>Copy email</button>
+                    <span class="copy-status" id="copy-status" role="status"></span>
+                </div>
 
-</section>
+                <form class="contact-form" id="contact-form" action="mailto:fayalabri@gmail.com" method="post" enctype="text/plain">
+                    <h3>Or write your message here</h3>
+                    <p class="form-note">Pressing Send opens your email app with your message ready to go. Nothing is stored on this site.</p>
 
+                    <label for="cf-name">Your name</label>
+                    <input type="text" id="cf-name" name="name" autocomplete="name" required>
 
+                    <label for="cf-topic">What is it about?</label>
+                    <select id="cf-topic" name="topic">
+                        <option>A new website</option>
+                        <option>Redesigning a website</option>
+                        <option>Something else</option>
+                    </select>
 
+                    <label for="cf-message">Message</label>
+                    <textarea id="cf-message" name="message" rows="6" required></textarea>
 
-    
-        </main>
+                    <button type="submit" class="cta-button primary">Send message</button>
+                </form>
+
+                <div class="cta-buttons profile-links">
+                    <a href="https://linkedin.com/in/fayalabri" class="cta-button" target="_blank" rel="noopener">LinkedIn</a>
+                    <!-- Resume: add the PDF as resume/Fay-Alabri-CV.pdf, then remove "hidden" -->
+                    <a href="resume/Fay-Alabri-CV.pdf" class="cta-button" download hidden>Download my CV (PDF)</a>
+                </div>
+            </div>
+        </section>
+    </main>
 
         <footer>
             <p>&copy; 2026 Fay Alabri. All rights reserved.</p>
@@ -96,5 +119,7 @@
                 </li>
             </ul>
         </footer>
+
+    <script src="contact.js"></script>
 </body>
 </html>
