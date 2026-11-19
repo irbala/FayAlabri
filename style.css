@@ -39,6 +39,11 @@ a {
     color: inherit;
 }
 
+/* Elements with the hidden attribute stay hidden, even buttons with their own display */
+[hidden] {
+    display: none !important;
+}
+
 a:focus-visible {
     outline: 2px solid var(--accent);
     outline-offset: 3px;
@@ -215,11 +220,224 @@ p {
     gap: 14px;
 }
 
-.contactme a {
+.contactme a:not(.cta-button) {
     color: var(--accent);
     font-weight: 600;
     text-decoration: none;
     border-bottom: 1px solid currentColor;
+}
+
+/* Email address with a "Copy email" button next to it */
+.email-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 14px;
+}
+
+.copy-button {
+    padding: 0.45rem 1rem;
+    font-family: inherit;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent);
+    background-color: #f3f0ff;
+    border: 1px solid rgba(109, 91, 208, 0.25);
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.copy-button:hover {
+    background-color: #e9e3ff;
+}
+
+.copy-status {
+    font-size: 0.85rem;
+    color: var(--text-soft);
+}
+
+/* Contact form */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 16px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+}
+
+.contact-form h3 {
+    font-size: 1.25rem;
+}
+
+.form-note {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.contact-form label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.75rem 0.9rem;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--text);
+    background-color: var(--card-solid);
+    border: 1px solid rgba(39, 39, 42, 0.2);
+    border-radius: 10px;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form input:focus-visible,
+.contact-form select:focus-visible,
+.contact-form textarea:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+.contact-form button[type="submit"] {
+    align-self: flex-start;
+    margin-top: 12px;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.profile-links {
+    margin-top: 8px;
+}
+
+/* Blog: list of posts */
+.blog-intro {
+    max-width: 760px;
+    margin: 0 auto 32px;
+    text-align: left;
+}
+
+.blog-intro h2 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+.post-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.post-card {
+    background: var(--card-solid);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 28px 32px;
+    text-align: left;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.post-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 36px rgba(109, 91, 208, 0.14);
+}
+
+.post-card h3 {
+    font-size: 1.3rem;
+    line-height: 1.35;
+    margin: 4px 0 8px;
+}
+
+.post-card h3 a {
+    text-decoration: none;
+}
+
+.post-card h3 a:hover {
+    color: var(--accent);
+}
+
+.post-meta {
+    font-size: 0.85rem;
+}
+
+/* Blog: a single post */
+.post {
+    background: var(--card);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 48px;
+    text-align: left;
+}
+
+.post h2 {
+    font-size: clamp(1.7rem, 4.5vw, 2.2rem);
+    line-height: 1.25;
+    margin: 6px 0 20px;
+}
+
+.post h3 {
+    font-size: 1.2rem;
+    margin: 32px 0 8px;
+}
+
+.post p,
+.post li {
+    margin-bottom: 12px;
+}
+
+.post ul {
+    padding-left: 1.2rem;
+    color: var(--text-soft);
+}
+
+.post code {
+    font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+    font-size: 0.9em;
+    background-color: #f3f0ff;
+    color: #4c3fa0;
+    padding: 1px 6px;
+    border-radius: 6px;
+}
+
+.post pre {
+    background-color: #27272a;
+    color: #f4f4f5;
+    padding: 16px 18px;
+    border-radius: 12px;
+    overflow-x: auto;
+    margin: 4px 0 16px;
+}
+
+.post pre code {
+    background: none;
+    color: inherit;
+    padding: 0;
+}
+
+.post a {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    text-decoration: none;
 }
 
 /* 404 page */
@@ -393,8 +611,13 @@ footer p {
     .home-section,
     .about-content,
     .contactme,
-    .error-content {
+    .error-content,
+    .post {
         padding: 32px 24px;
+    }
+
+    .post-card {
+        padding: 24px;
     }
 
     .project-card {
@@ -418,8 +641,13 @@ footer p {
 
 /* Phones */
 @media only screen and (max-width: 480px) {
+    nav ul {
+        gap: 0;
+    }
+
     nav li a {
-        padding: 10px 12px;
+        padding: 10px 8px;
+        font-size: 0.9rem;
     }
 
     .cta-buttons {

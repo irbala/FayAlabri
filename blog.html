@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Fay Alabri">
+    <title>Blog | Fay Alabri</title>
+    <meta name="description" content="Notes from Fay Alabri on web design and development: Arabic RTL layouts, colour and accessibility.">
+    <link rel="icon" type="image/png" href="img/icon.png">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QK3Y5M2V5M"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-QK3Y5M2V5M');
+    </script>
+</head>
+<body>
+    <header>
+        <div class="header-title">
+            <h1>Fay Alabri</h1>
+            <p class="subtitle">UX/UI Designer &amp; Web Developer</p>
+        </div>
+        <nav aria-label="Main">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="work.html">Work</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html" class="active" aria-current="page">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    
+    <main>
+        <section class="blog">
+            <div class="blog-intro">
+                <h2>Blog</h2>
+                <p>Notes on problems I've solved while building websites: right-to-left Arabic layouts, colour, accessibility and the small details in between.</p>
+            </div>
+
+            <ul class="post-list">
+                <!-- Newest post first. Copy this <li> for each new post. -->
+                <li>
+                    <article class="post-card">
+                        <p class="post-meta"><time datetime="2026-11-19">19 November 2026</time> &middot; 5 min read</p>
+                        <h3><a href="blog/arabic-rtl-layouts.html">Building Arabic websites that read right to left</a></h3>
+                        <p>Six things I do on every Arabic site, from the first line of HTML to arrows, phone numbers and fonts.</p>
+                    </article>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    
+    <footer>
+        <p>&copy; 2026 Fay Alabri. All rights reserved.</p>
+        <ul class="social-icons">
+            <li>
+                <a href="https://github.com/irbala" target="_blank" rel="noopener" aria-label="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V19"></path>
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="https://linkedin.com/in/fayalabri" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="https://instagram.com/ifaerie_" target="_blank" rel="noopener" aria-label="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="https://x.com/ifaerie_" target="_blank" rel="noopener" aria-label="X (Twitter)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter">
+                        <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </footer>
+</body>
+</html>
